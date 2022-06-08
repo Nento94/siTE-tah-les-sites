@@ -1,0 +1,14 @@
+from mblock import event
+
+@event.greenflag
+def on_greenflag():
+    while True:
+        if sprite.is_keypressed('space'):
+            sprite.show()
+            sprite.x = sprite.get_property('Fusée', 'x')
+            sprite.y = sprite.get_property('Fusée', 'y')
+
+        while not sprite.touching('edge'):
+            sprite.y = sprite.y + 50
+
+        sprite.hide()
