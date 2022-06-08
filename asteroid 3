@@ -1,0 +1,29 @@
+from mblock import event
+import random
+
+@event.greenflag
+def on_greenflag():
+    while True:
+        sprite.show()
+        sprite.x = random.randint(-220, 220)
+        sprite.y = 180
+        sprite.glide(random.randint(-220, 220), -180, 1)
+
+
+
+@event.greenflag
+def on_greenflag1():
+    while True:
+        if sprite.touching('Fusée'):
+            sprite.stop_all()
+
+
+
+
+@event.greenflag
+def on_greenflag2():
+    while True:
+        if sprite.touching('BOULE JAUNE'):
+            v = sprite.get_variable('score')
+            sprite.set_variable('score', v + 1)
+            sprite.hide()
