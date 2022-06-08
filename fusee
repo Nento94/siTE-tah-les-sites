@@ -1,0 +1,54 @@
+from mblock import event
+import time
+
+@event.greenflag
+def on_greenflag():
+    while True:
+        if sprite.is_keypressed('q'):
+            sprite.x = sprite.x + -15
+
+
+
+
+@event.greenflag
+def on_greenflag1():
+    while True:
+        if sprite.is_keypressed('z'):
+            sprite.y = sprite.y + 15
+
+
+
+
+@event.greenflag
+def on_greenflag2():
+    while True:
+        if sprite.is_keypressed('d'):
+            sprite.x = sprite.x + 15
+
+
+
+
+@event.greenflag
+def on_greenflag3():
+    while True:
+        if sprite.is_keypressed('s'):
+            sprite.y = sprite.y + -15
+
+
+
+
+@event.greenflag
+def on_greenflag4():
+    while True:
+        sprite.play_until_done('Video Game 2')
+
+
+
+@event.greenflag
+def on_greenflag5():
+    sprite.set_variable('score', 0)
+    sprite.set_variable('temps', 0)
+    while True:
+        time.sleep(1)
+        v = sprite.get_variable('temps')
+        sprite.set_variable('temps', v + 1)
